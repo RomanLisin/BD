@@ -40,6 +40,36 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery2 - CREATE TABLE Groups.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery2 - CREATE TABLE Students.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 - CREATE TABLE Students.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 - CREATE TABLE Teachers.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 - CREATE TABLE Teachers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3 - CREATE Disciplines.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery3 - CREATE Disciplines.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery4  - CREATE Schedule.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery4  - CREATE Schedule.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery5 - CREATE DATABASE ALLinONE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery5 - CREATE DATABASE ALLinONE.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
