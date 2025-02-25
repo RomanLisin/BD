@@ -1,0 +1,4 @@
+USE VPD_311_HOME
+GO
+
+SELECT * FROM Directions;

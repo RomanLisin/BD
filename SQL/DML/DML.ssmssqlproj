@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DDL">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DML">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="LIS\SQLEXPRESS:LIS\rls">
-          <Created>2025-02-09T19:28:20.4515003+10:00</Created>
+          <Created>2025-02-16T19:44:02.6999695+10:00</Created>
           <Type>SQL</Type>
           <Server>LIS\SQLEXPRESS</Server>
           <UserName />
@@ -22,53 +22,35 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="SQLQuery1 - CREATE DATABASE.sql">
+        <FileNode Name="SQLQuery1 INSERT Directions.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery1 - CREATE DATABASE.sql</FullPath>
+          <FullPath>SQLQuery1 INSERT Directions.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery2  - CREATE TABLE Directions.sql">
+        <FileNode Name="SQLQuery1 SELECT FROM Directions.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery2  - CREATE TABLE Directions.sql</FullPath>
+          <FullPath>SQLQuery1 SELECT FROM Directions.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery2 - CREATE TABLE Groups.sql">
+        <FileNode Name="SQLQuery2 SELECT COUNT Students and Groups.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery2 - CREATE TABLE Groups.sql</FullPath>
+          <FullPath>SQLQuery2 SELECT COUNT Students and Groups.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery2 - CREATE TABLE Students.sql">
+        <FileNode Name="SQLQuery2 SELECT FROM Students.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery2 - CREATE TABLE Students.sql</FullPath>
+          <FullPath>SQLQuery2 SELECT FROM Students.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery2 - CREATE TABLE Teachers.sql">
+        <FileNode Name="SQLQuery3 INSERT Us.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery2 - CREATE TABLE Teachers.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery3 - CREATE Disciplines.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLQuery3 - CREATE Disciplines.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery4  - CREATE Schedule.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLQuery4  - CREATE Schedule.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery5 - CREATE DATABASE All_In_One.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLQuery5 - CREATE DATABASE All_In_One.sql</FullPath>
+          <FullPath>SQLQuery3 INSERT Us.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
