@@ -60,6 +60,6 @@ BEGIN
 	SET @date = DATEADD(DAY, 1, @date);
 END
 
---DELETE
---FROM Schedule
---WHERE lesson_id>61;
+DELETE
+FROM Schedule
+WHERE lesson_id>61;
