@@ -13,6 +13,7 @@ FROM	Schedule, Groups, Disciplines, Teachers
 WHERE	[group]			=  group_id
 AND		discipline		=  discipline_id
 AND		teacher			=  teacher_id
+--AND  lesson_id > 61
 
 
 
