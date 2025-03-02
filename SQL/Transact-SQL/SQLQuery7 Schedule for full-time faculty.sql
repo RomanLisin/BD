@@ -62,4 +62,4 @@ END
 
 DELETE
 FROM Schedule
---WHERE lesson_id>61;
+----WHERE lesson_id>61;
