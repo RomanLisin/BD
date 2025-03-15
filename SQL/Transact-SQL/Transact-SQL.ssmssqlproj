@@ -22,11 +22,11 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="SQLQuery 10 LAST.sql">
+        <FileNode Name="SQLQuery 10 Schedule According Scheme With Function.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery 10 LAST.sql</FullPath>
+          <FullPath>SQLQuery 10 Schedule According Scheme With Function.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLQuery0 Check.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
@@ -64,6 +64,12 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery1 SELECT ScheduleForGroup.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery2 CREATE Procdure Accordin Scheme.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 CREATE Procdure Accordin Scheme.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery2 CREATE SetScheduleForSemistacionar.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
@@ -75,6 +81,18 @@
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery2 INSERT LessonToSchedule.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 PROCEDURE InsertLessonsFullDay.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 PROCEDURE InsertLessonsFullDay.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 PROCEDURE InsertLessonsFullWeek.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 PROCEDURE InsertLessonsFullWeek.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLQuery5 INSERT Students.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>

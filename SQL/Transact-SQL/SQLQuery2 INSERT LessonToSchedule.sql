@@ -3,7 +3,7 @@ USE VPD_311_Import
 SET DATEFIRST 1;
 GO
 
-CREATE PROCEDURE sp_InsertLessonToSchedule
+ALTER PROCEDURE sp_InsertLessonToSchedule
 	@group		AS	INT,
 	@discipline AS	SMALLINT,
 	@teacher	AS	SMALLINT,

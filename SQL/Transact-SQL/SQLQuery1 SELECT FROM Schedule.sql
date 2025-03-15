@@ -15,7 +15,6 @@ AND		discipline		=  discipline_id
 AND		teacher			=  teacher_id
 --AND  lesson_id > 61
 
-
-DELETE FROM Schedule
+--DELETE FROM Schedule
 
 --PRINT (@lesson_number + 1);
