@@ -1,4 +1,4 @@
-USE VPD_311_Import
+п»їUSE VPD_311_Import
 SET DATEFIRST 1;
 GO
 
@@ -7,11 +7,11 @@ DECLARE @FirstWeekNumber TINYINT = CAST(PARSENAME(REPLACE(@scheme, '-', '.'), 2)
 DECLARE @SecondWeekNumber TINYINT = CAST(PARSENAME(REPLACE(@scheme, '-', '.'), 1) AS TINYINT);
 DECLARE @group INT = (SELECT group_id FROM Groups WHERE group_name = N'PD_212');
 DECLARE @discipline_1 SMALLINT = (SELECT discipline_id FROM Disciplines WHERE discipline_name = N'Hardware-PC');
-DECLARE @discipline_2 SMALLINT = (SELECT discipline_id FROM Disciplines WHERE discipline_name = N'Разработка Windows-приложений на языке C++');
+DECLARE @discipline_2 SMALLINT = (SELECT discipline_id FROM Disciplines WHERE discipline_name = N'Р Р°Р·СЂР°Р±РѕС‚РєР° Windows-РїСЂРёР»РѕР¶РµРЅРёР№ РЅР° СЏР·С‹РєРµ C++');
 DECLARE @number_of_lessons_1 SMALLINT = (SELECT number_of_lessons FROM Disciplines WHERE discipline_id = @discipline_1);
 DECLARE @number_of_lessons_2 SMALLINT = (SELECT number_of_lessons FROM Disciplines WHERE discipline_id = @discipline_2);
-DECLARE @Teacher SMALLINT = (SELECT teacher_id FROM Teachers WHERE last_name = N'Глазунов');
-DECLARE @start_date DATE = N'2024-12-02';
+DECLARE @Teacher SMALLINT = (SELECT teacher_id FROM Teachers WHERE last_name = N'Р“Р»Р°Р·СѓРЅРѕРІ');
+DECLARE @start_date DATE = N'2025-06-02';
 DECLARE @date DATE = @start_date;
 DECLARE @start_time TIME(0) = N'10:00';
 DECLARE @time AS TIME(0);
@@ -27,7 +27,7 @@ SET @time = @start_time;
 
 WHILE (@number_of_lessons_1 > 0 OR @number_of_lessons_2 > 0)
 BEGIN
-    -- Определяем количество дней занятий для текущей недели
+    -- РћРїСЂРµРґРµР»СЏРµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№ Р·Р°РЅСЏС‚РёР№ РґР»СЏ С‚РµРєСѓС‰РµР№ РЅРµРґРµР»Рё
     SET @disc1_days_this_week = IIF(@current_week_scheme = 0, FLOOR(@FirstWeekNumber / 10), FLOOR(@SecondWeekNumber / 10));
     SET @disc2_days_this_week = IIF(@current_week_scheme = 0, @FirstWeekNumber % 10, @SecondWeekNumber % 10);
 	SET @week_scheme = IIF(@current_week_scheme = 0, @FirstWeekNumber, @SecondWeekNumber);

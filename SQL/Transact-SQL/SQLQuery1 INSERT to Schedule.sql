@@ -30,6 +30,15 @@ BEGIN
 	PRINT(@lesson_number+1);
 	PRINT(@time);
 
+	-- Проверяем, является ли день праздничным
+		IF EXISTS (SELECT 1 FROM Holidays WHERE HolidayDate = @date)
+		BEGIN
+		    PRINT N'Занятие на ' + CAST(@date AS NVARCHAR) + N' отменено: праздничный день!';
+			--SET @date = DATEADD(DAY,1,@date);
+		    --RETURN;
+		END
+		ELSE BREAK
+
 	INSERT Schedule
 			([group], discipline, teacher,[date],[time], spent)
 	VALUES  (@group, @discipline, @teacher, @date,  @time,IIF(@date < GETDATE(), 1,0));	
