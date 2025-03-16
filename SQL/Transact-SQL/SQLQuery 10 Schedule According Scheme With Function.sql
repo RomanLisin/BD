@@ -11,7 +11,7 @@ DECLARE @discipline_2 SMALLINT = (SELECT discipline_id FROM Disciplines WHERE di
 DECLARE @number_of_lessons_1 SMALLINT = (SELECT number_of_lessons FROM Disciplines WHERE discipline_id = @discipline_1);
 DECLARE @number_of_lessons_2 SMALLINT = (SELECT number_of_lessons FROM Disciplines WHERE discipline_id = @discipline_2);
 DECLARE @Teacher SMALLINT = (SELECT teacher_id FROM Teachers WHERE last_name = N'Глазунов');
-DECLARE @start_date DATE = N'2024-09-02';
+DECLARE @start_date DATE = N'2024-12-02';
 DECLARE @date DATE = @start_date;
 DECLARE @start_time TIME(0) = N'10:00';
 DECLARE @time AS TIME(0);

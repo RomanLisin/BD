@@ -64,6 +64,12 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery1 SELECT ScheduleForGroup.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery2 CREATE Function IsHoliday.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 CREATE Function IsHoliday.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery2 CREATE Procdure Accordin Scheme.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LIS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LIS\SQLEXPRESS</AssociatedConnSrvName>

@@ -21,6 +21,13 @@ BEGIN
 	DECLARE @number_lessons_of_day AS TINYINT = @lessons_left;
 	WHILE @lessons_left > 0 AND @number_of_lessons > 0 
 	BEGIN
+		-- Проверяем, является ли день праздничным
+		IF EXISTS (SELECT 1 FROM Holidays WHERE HolidayDate = @date)
+		BEGIN
+		    PRINT N'Занятие на ' + CAST(@date AS NVARCHAR) + N' отменено: праздничный день!';
+			--SET @date = DATEADD(DAY,1,@date);
+		    RETURN;
+		END
 		EXEC sp_InsertLessonToSchedule @group, @discipline, @teacher, @date, @time ;
 		SET @lessons_left = @lessons_left - 1;
 		SET @number_of_lessons = @number_of_lessons - 1;

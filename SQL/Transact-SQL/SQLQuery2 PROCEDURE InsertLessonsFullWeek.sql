@@ -39,21 +39,36 @@ BEGIN
         BEGIN
             IF (@change_discipline = 0 AND @disc1_days_this_week > 0) OR (@change_discipline = 1 AND @disc2_days_this_week > 0)
             BEGIN
+				--			-- Проверяем, является ли день праздничным
+				--IF EXISTS (SELECT 1 FROM Holidays WHERE HolidayDate = @date)
+				--BEGIN
+				--    PRINT N'Занятие на ' + CAST(@date AS NVARCHAR) + N' отменено: праздничный день!';
+				--    --RETURN;
+				--END
+				--ELSE 
+				--BEGIN
                 EXEC sp_InsertLessonsFullDay @group_id, @discipline, @teacher_id, @date OUTPUT, @time OUTPUT, @start_time, 2, @number_of_lessons OUTPUT;
+						--SET @change_discipline = IIF (@number_of_lessons_2 =0,1,0);
+						--SET @change_discipline = IIF (@number_of_lessons_1 = 0,0,1);
 					IF @change_discipline = 0
 					BEGIN
 						SET @number_of_lessons_1 = @number_of_lessons;
 						SET @disc1_days_this_week = @disc1_days_this_week - 1;
 						IF @disc1_days_this_week = 0
-						SET @change_discipline = 1; --IIF(@change_discipline = 0, 1, 0);
+						IF @number_of_lessons_2 <>0
+						SET @change_discipline = 1; -- IIF(@change_discipline = 0 AND @number_of_lessons_2 <>0, 1, 0);
+						ELSE BREAK
 					END
 					ELSE
 					BEGIN
 						SET @number_of_lessons_2 = @number_of_lessons;
 						SET @disc2_days_this_week = @disc2_days_this_week - 1;
 						IF @disc2_days_this_week = 0
-						SET @change_discipline = 0 ; -- IIF(@change_discipline = 0, 1, 0);
+						IF @number_of_lessons_1 <>0
+						SET @change_discipline = 0; --  IIF(@change_discipline = 1 AND  @number_of_lessons_1 <>0, 0, 1);
+						ELSE BREAK
 					END
+				--END
 			END
         END
         SET @date = DATEADD(DAY, 1, @date);
