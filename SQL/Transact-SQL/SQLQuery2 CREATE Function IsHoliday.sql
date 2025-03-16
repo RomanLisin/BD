@@ -17,7 +17,7 @@ CREATE TABLE Holidays (
 DECLARE @year INT = 2025; -- Можно изменить на нужный год при этом нужно пересчитать даты пасхи
 DECLARE @easter DATE;
 
----- Вычисляем дату Пасхи по алгоритму Гаусса
+---- вычисляем дату Пасхи по алгоритму Гаусса
 --DECLARE @a INT = @year % 19;
 --DECLARE @b INT = @year % 4;
 --DECLARE @c INT = @year % 7;
@@ -28,42 +28,39 @@ DECLARE @easter DATE;
 
 --SET @easter = DATEADD(DAY, @d + @e + 13, DATEFROMPARTS(@year, 4, 1));
 
--- Новогодние каникулы (1-14 января)
+--новогодние каникулы (1-14 января)
 INSERT INTO Holidays
-SELECT DATEADD(DAY, number, DATEFROMPARTS(@year, 1, 1)), N'Новогодние каникулы'
-FROM master.dbo.spt_values 
-WHERE type = 'P' AND number BETWEEN 0 AND 13
-AND NOT EXISTS (
-    SELECT 1 FROM Holidays WHERE HolidayDate = DATEADD(DAY, number, DATEFROMPARTS(@year, 1, 1))
-);
+	SELECT DATEADD(DAY, number, DATEFROMPARTS(@year, 1, 1)), N'Новогодние каникулы'
+	FROM master.dbo.spt_values 
+	WHERE type = 'P' AND number BETWEEN 0 AND 13
+	AND NOT EXISTS (
+    SELECT 1 FROM Holidays WHERE HolidayDate = DATEADD(DAY, number, DATEFROMPARTS(@year, 1, 1)));
 
 -- 23 Февраля и 8 Марта
 INSERT INTO Holidays 
-SELECT d, n FROM (VALUES
-    (DATEFROMPARTS(@year, 2, 23), N'День защитника Отечества'),
-    (DATEFROMPARTS(@year, 3, 8), N'Международный женский день')
-) AS v(d, n)
-WHERE NOT EXISTS (SELECT 1 FROM Holidays WHERE HolidayDate = v.d);
+	SELECT d, n FROM (VALUES
+	    (DATEFROMPARTS(@year, 2, 23), N'День защитника Отечества'),
+	    (DATEFROMPARTS(@year, 3, 8), N'Международный женский день')) 
+		AS v(d, n)
+	WHERE NOT EXISTS (SELECT 1 FROM Holidays WHERE HolidayDate = v.d);
 
 -- Майские праздники (1-10 мая)
 INSERT INTO Holidays
-SELECT DATEADD(DAY, number, DATEFROMPARTS(@year, 5, 1)), N'Майские праздники'
-FROM master.dbo.spt_values 
-WHERE type = 'P' AND number BETWEEN 0 AND 9
-AND NOT EXISTS (
-    SELECT 1 FROM Holidays WHERE HolidayDate = DATEADD(DAY, number, DATEFROMPARTS(@year, 5, 1))
-);
+	SELECT DATEADD(DAY, number, DATEFROMPARTS(@year, 5, 1)), N'Майские праздники'
+	FROM master.dbo.spt_values 
+	WHERE type = 'P' AND number BETWEEN 0 AND 9
+	AND NOT EXISTS (
+    SELECT 1 FROM Holidays WHERE HolidayDate = DATEADD(DAY, number, DATEFROMPARTS(@year, 5, 1)));
 
--- Летние каникулы (последняя неделя июля + первая неделя августа)
+--летние каникулы (последняя неделя июля + первая неделя августа)
 INSERT INTO Holidays
-SELECT DATEADD(DAY, number, DATEFROMPARTS(@year, 7, 25)), N'Летние каникулы'
-FROM master.dbo.spt_values 
-WHERE type = 'P' AND number BETWEEN 0 AND 13
-AND NOT EXISTS (
-    SELECT 1 FROM Holidays WHERE HolidayDate = DATEADD(DAY, number, DATEFROMPARTS(@year, 7, 25))
-);
+	SELECT DATEADD(DAY, number, DATEFROMPARTS(@year, 7, 25)), N'Летние каникулы'
+	FROM master.dbo.spt_values 
+	WHERE type = 'P' AND number BETWEEN 0 AND 13
+	AND NOT EXISTS (
+    SELECT 1 FROM Holidays WHERE HolidayDate = DATEADD(DAY, number, DATEFROMPARTS(@year, 7, 25)));
 
----- Пасха и 2 дополнительных дня
+----Пасха и 2 дополнительных дня
 --INSERT INTO Holidays 
 --SELECT d, n FROM (VALUES
 --    (@easter, N'Пасха'),
@@ -72,7 +69,7 @@ AND NOT EXISTS (
 --) AS v(d, n)
 --WHERE NOT EXISTS (SELECT 1 FROM Holidays WHERE HolidayDate = v.d);
 
--- Пасха и два дополнительных дня (20-22 апреля)
+-- пасха и два дополнительных дня (20-22 апреля)
 INSERT INTO Holidays VALUES 
     ('2025-04-20', N'Пасха'),
     ('2025-04-21', N'Пасхальный понедельник'),

@@ -1,0 +1,34 @@
+--SQLQuery1 - CREATE PROCEDURE AddDaysOFF.sql
+
+USE VPD_311_Import
+SET DATEFIRST 1;
+GO
+
+CREATE FUNCTION GetHolidaysStartDate(@holiday_name AS NVARCHAR(150), @year AS SMALLINT)	RETURNS DATE
+--CREATE PROCEDURE sp_GetHolidaysStartDate(@holiday_name AS NVARCHAR(150), @year AS SMALLINT)
+--AS
+BEGIN
+	DECLARE
+	@holiday_id		AS	TINYINT	= (SELECT holiday_id	FROM Holidays2	WHERE holiday_name  LIKE @holiday_name),
+	@duration		AS	TINYINT = (SELECT duration		FROM Holidays2	WHERE holiday_name  LIKE @holiday_name),
+	@month			AS	TINYINT = (SELECT [MONTH]		FROM Holidays2	WHERE holiday_name  LIKE @holiday_name),
+	@day			AS	TINYINT = (SELECT [day]			FROM Holidays2	WHERE holiday_name  LIKE @holiday_name)
+	;
+	--PRINT @holiday_id;
+	--PRINT @duration;
+	--PRINT @month;
+	--PRINT @day;
+	
+	DECLARE
+	@start_date		AS	DATE	=
+	(
+		CASE
+		WHEN	@holiday_id = 1 THEN dbo.GetNewYearHolidaysStart(@year)
+		WHEN	@holiday_id = 4 THEN dbo.GetEasterDate(@year)
+		WHEN	@holiday_id = 6 THEN dbo.GetSummerHolidaysStart(@year)
+		WHEN	@month !=0 AND @day != 0 THEN	DATEFROMPARTS(@year, @month, @day)
+	END
+	)
+	 RETURN @start_date
+END
+
